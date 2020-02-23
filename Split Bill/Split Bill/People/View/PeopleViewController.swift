@@ -10,34 +10,42 @@ import UIKit
 
 class PeopleViewController: UIViewController {
     
-    public var bill: Bill?
-  
+    // MARK: Outlet(s)
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var spiltTextField: UILabel!
     @IBOutlet weak var splitStepper: UIStepper!
     @IBOutlet weak var nextButton: UIButton!
-
+    
+    // MARK: Attribute(s)
     var viewModel: PeopleViewModel?
+    public var bill: Bill?
+    
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViewModel()
     }
-
+    
+    // MARK: Action(s)
+    
+    @IBAction func didTapStepper(_ sender: Any) {
+        viewModel?.updateBumberOfPeople(with: splitStepper?.value ?? 1)
+    }
+    
+    @IBAction func nextButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "tip", sender: sender)
+    }
+    
+    // MARK: Method(s)
+    
     func setUpViewModel() {
         if let bill = self.bill {
             viewModel = PeopleViewModel(view: self, bill: bill)
             viewModel?.updateBumberOfPeople(with: splitStepper?.value ?? 1)
             viewModel?.configureUI()
         }
-    }
-
-    @IBAction func didTapStepper(_ sender: Any) {
-        viewModel?.updateBumberOfPeople(with: splitStepper?.value ?? 1)
-    }
-
-    @IBAction func nextButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "tip", sender: sender)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -47,12 +55,14 @@ class PeopleViewController: UIViewController {
     
 }
 
+// MARK: PeopleView Extension
+
 extension PeopleViewController: PeopleView {
     
     func configureTitle(title: String) {
         self.title = title
     }
-
+    
     func configureInstruction(instruction: String) {
         self.titleLabel.text = instruction
     }
@@ -68,6 +78,5 @@ extension PeopleViewController: PeopleView {
     func updateNumberOfPeople(numberOfPeople: String) {
         spiltTextField.text = numberOfPeople
     }
-    
     
 }

@@ -10,23 +10,30 @@ import Foundation
 
 class PeopleViewModel {
     
-    let title = "Split number"
-    let instruction = "Ways to split"
-    let nextButtonTitle = "NEXT"
-    let startOverButtonTitle = "Start over"
+    // MARK: Constant(s)
+    
+    let Title = "Split number"
+    let Instruction = "How many ways are we splitting this?"
+    let NextButtonTitle = "NEXT"
+    
+    // MARK: Attributes
     
     var bill: Bill
     var view: PeopleView
+    
+    // MARK: Constructor
     
     init(view: PeopleView, bill: Bill) {
         self.bill = bill
         self.view = view
     }
     
+    // MARK: Method(s)
+    
     func configureUI() {
-        view.configureTitle(title: title)
-        view.configureInstruction(instruction: instruction)
-        view.configureNextButton(buttonTitle: nextButtonTitle)
+        view.configureTitle(title: Title)
+        view.configureInstruction(instruction: Instruction)
+        view.configureNextButton(buttonTitle: NextButtonTitle)
     }
     
     func updateBumberOfPeople(with numberOfPeople: Int) {
@@ -39,5 +46,5 @@ class PeopleViewModel {
         bill.numberOfPeople = value
         view.updateNumberOfPeople(numberOfPeople: "\(value)")
     }
-
+    
 }

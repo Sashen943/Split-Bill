@@ -15,19 +15,17 @@ class ResultViewModel {
     let tipTitle = "Including a tip of"
     let totalAmountTitle = "Total amount of bill"
     let doneButtonTitle = "DONE"
-    
     let detailsButtonTitle = "Details"
     let hideDetailsButtonTitle = "Hide details"
-    
     let breakDownTotalBillTitle = "Total Bill"
-    let breakDownTipTitle = "Tip (%@ of %@)"
-    let breakDownTotalBillIncludingTipTitle = "Total Bill including Tip"
+    let breakDownTipTitle = "Tip %@"
+    let breakDownTotalBillIncludingTipTitle = "Total bill + tip"
     let breakDownSplitTitle = "Split"
-    let breakDownEachPersonPaysTitle = "Each person pays ( %@ ÷ %@ )"
-    
+    let breakDownEachPersonPaysTitle = "Each person pays"
     let currency = Currency.currency()
     
     var bill: Bill
+    private lazy var repository: ResultRepository = ResultRepositoryImplementation()
     weak var view: ResultView?
     
     var tipWithTitle: String {
@@ -69,10 +67,11 @@ class ResultViewModel {
         }
     }
 
-    
     var split: String {
         return "\(bill.numberOfPeople)"
     }
+    
+    var location: String = ""
     
     init(bill: Bill, view: ResultView) {
         self.bill = bill
@@ -86,21 +85,22 @@ class ResultViewModel {
         view?.configureTipLabel(labelTitle: tipWithTitle)
         view?.configureTotalAmountLabel(labelTitle: totalAmountWithTitle)
         view?.configureDoneButton(buttonTitle: doneButtonTitle)
-        view?.configureDetailsButton(buttonTitle: detailsButtonTitle, action: #selector(showDetails), target: self)
-        view?.configureHideDetailsButton(buttonTitle: hideDetailsButtonTitle, action: #selector(hideDetails), target: self)
         configureBreakdownTitles()
         configureBreakdownValues()
-        view?.hideDetails()
+    }
+    
+    func saveBill() {
+        repository.saveBill(self.bill)
     }
     
     private func configureBreakdownTitles() {
-        let tipTitle = String(format: breakDownTipTitle, tip, totalAmountWithoutTip)
-        let eachPersonPaysTitle = String.init(format: breakDownEachPersonPaysTitle, totalAmountWithTip, split)
+        let tipTitle = String(format: breakDownTipTitle, tip)
+        let eachPersonPaysTitle = String.init(format: breakDownEachPersonPaysTitle)
         view?.configureBreakdownViewTitles(totalBillTitle: breakDownTotalBillTitle,
-                                          tipTitle: tipTitle,
-                                          totalBillIncludingTipTitle: breakDownTotalBillIncludingTipTitle,
-                                          splitTitle: breakDownSplitTitle,
-                                          eachPersonPaysTitle: eachPersonPaysTitle)
+                                           tipTitle: tipTitle,
+                                           totalBillIncludingTipTitle: breakDownTotalBillIncludingTipTitle,
+                                           splitTitle: breakDownSplitTitle,
+                                           eachPersonPaysTitle: eachPersonPaysTitle)
     }
     
     private func configureBreakdownValues() {
@@ -115,19 +115,12 @@ class ResultViewModel {
                                            eachPersonPaysValue: eachPersonPays)
     }
     
-    @objc func hideDetails() {
-        view?.hideDetails()
-    }
-    
-    @objc func showDetails() {
-        view?.showDetails()
-    }
-    
     private func calculateAmountThatEachPersonPays() -> String {
         let amount = bill.totalAmount
         let people = NumberConverter.convertIntToFloat(numberAsInt: bill.numberOfPeople)
         let split = amount/people
         return  "\(currency)\(split.roundCurrency())"
     }
-
+    
+    
 }

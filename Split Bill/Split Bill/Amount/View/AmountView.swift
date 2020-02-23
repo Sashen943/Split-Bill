@@ -14,7 +14,12 @@ protocol AmountView {
     func configureCurrencyLabel(currency: String)
     func configureNextButton(buttonTitle: String)
     func configureErrorMessage(message: String)
+    func configureHistoryBarButton(buttonTitle: String)
     func showErrorMessage()
     func hideErrorMessage()
-    func performNavigation(bill: Bill)
+    func navigateToSplitScreen(bill: Bill)
+    func navigateToHistoryScreen()
+    func showLoadingIndicator()
+    func hideLoadingIndicator()
+    func displayLocationNotFoundPopUp()
 }

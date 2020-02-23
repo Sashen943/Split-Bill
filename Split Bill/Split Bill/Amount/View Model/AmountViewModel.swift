@@ -11,8 +11,9 @@ import Foundation
 class AmountViewModel {
     
     let titleLabel = "Amount"
-    let instructionTitle = "Bill amount"
+    let instructionTitle = "Enter the total bill amount"
     let buttonTitle = "NEXT"
+    let historyBarButton = "History"
     let currency = Currency.currency()
     let errorMessage = "The amount entered is invalid.\nMake sure to include cents for example \(Currency.currency())12 is \(Currency.currency())12.00"
     
@@ -29,14 +30,16 @@ class AmountViewModel {
         self.amountView?.configureNextButton(buttonTitle: buttonTitle)
         self.amountView?.configureErrorMessage(message: errorMessage)
         self.amountView?.configureCurrencyLabel(currency: currency)
+        self.amountView?.configureHistoryBarButton(buttonTitle: historyBarButton)
     }
     
-     func nextButtonTap(amount: String) {
+    func nextButtonTap(amount: String, address: String) {
         amountView?.hideErrorMessage()
         if let amountToSet = Float(amount) {
             setBillAmount(amount: amountToSet)
-            amountView?.performNavigation(bill: bill)
+            amountView?.navigateToSplitScreen(bill: bill)
         }
+        bill.location = address
     }
 
     private func setBillAmount(amount: Float) {

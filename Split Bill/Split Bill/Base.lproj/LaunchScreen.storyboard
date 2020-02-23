@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,32 +16,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="m2R-cP-Q8D">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money_icon" translatesAutoresizingMaskIntoConstraints="NO" id="OPd-dX-CMb">
+                                <rect key="frame" x="68" y="403" width="512" height="512"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split Bill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOz-c3-WxO">
-                                <rect key="frame" x="102" y="419" width="210.5" height="68"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split Bills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOz-c3-WxO">
+                                <rect key="frame" x="87.5" y="419" width="239.5" height="68"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="58"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBx-6c-Tgo">
-                                <rect key="frame" x="8" y="857" width="398" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version 1.2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBx-6c-Tgo">
+                                <rect key="frame" x="8" y="841" width="398" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="m2R-cP-Q8D" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3Om-Wt-6FG"/>
-                            <constraint firstItem="m2R-cP-Q8D" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="EOT-9O-E73"/>
+                            <constraint firstAttribute="trailing" secondItem="OPd-dX-CMb" secondAttribute="trailing" constant="-166" id="7CA-t3-V7r"/>
                             <constraint firstItem="hOz-c3-WxO" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="FuM-SD-GHD"/>
                             <constraint firstItem="hOz-c3-WxO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UVE-cr-5Cg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VBx-6c-Tgo" secondAttribute="trailing" constant="8" id="fkZ-wE-F6U"/>
-                            <constraint firstAttribute="bottom" secondItem="m2R-cP-Q8D" secondAttribute="bottom" id="hY8-Ob-qpW"/>
-                            <constraint firstItem="m2R-cP-Q8D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p15-q2-cgD"/>
-                            <constraint firstItem="VBx-6c-Tgo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="16" id="p1w-1b-JFI"/>
+                            <constraint firstAttribute="bottom" secondItem="OPd-dX-CMb" secondAttribute="bottom" constant="-19" id="kZb-b3-dMB"/>
+                            <constraint firstItem="VBx-6c-Tgo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="p1w-1b-JFI"/>
                             <constraint firstItem="VBx-6c-Tgo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="yia-U4-mDb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -55,6 +51,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="400" height="300"/>
+        <image name="money_icon" width="512" height="512"/>
     </resources>
 </document>

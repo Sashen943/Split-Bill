@@ -15,8 +15,6 @@ protocol ResultView: class {
     func configureTotalAmountLabel(labelTitle: String)
     func configureTipLabel(labelTitle: String)
     func configureDoneButton(buttonTitle: String)
-    func configureDetailsButton(buttonTitle: String, action: Selector, target: Any)
-    func configureHideDetailsButton(buttonTitle: String, action: Selector, target: Any)
     func configureBreakdownViewTitles(totalBillTitle: String,
                                       tipTitle: String,
                                       totalBillIncludingTipTitle: String,
@@ -27,6 +25,5 @@ protocol ResultView: class {
                                       totalBillIncludingTipValue: String,
                                       splitValue: String,
                                       eachPersonPaysValue: String)
-    func showDetails()
-    func hideDetails()
+    
 }

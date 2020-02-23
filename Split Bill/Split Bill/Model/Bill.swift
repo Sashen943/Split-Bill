@@ -9,13 +9,27 @@
 import Foundation
 
 class Bill {
-    
+
+    // MARK: Attribute(s)
+
     var totalAmountBeforeTip: Float = 0
     var totalAmount: Float = 0
     var tipPercent: Float = 0
     var numberOfPeople = 1
-    
-    init() {
-        
+    var location = "No location"
+
+    // MARK: Constructor
+
+    init(){}
+
+    // MARK: Method(s)
+
+    func getTotalAmountDuePerPerson() -> String {
+        let amount = totalAmount
+        let people = NumberConverter.convertIntToFloat(numberAsInt: numberOfPeople)
+        let split = amount/people
+        let currency = Currency.currency()
+        return  "\(currency)\(split.roundCurrency())"
     }
+
 }

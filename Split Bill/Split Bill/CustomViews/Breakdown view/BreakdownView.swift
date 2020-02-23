@@ -10,6 +10,9 @@ import UIKit
 
 class BreakdownView: UIView {
     
+    
+    // MARK: Outlet(s)
+    
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var totalBillTitleLabel: UILabel!
     @IBOutlet weak var totalBillValueLabel: UILabel!
@@ -23,26 +26,30 @@ class BreakdownView: UIView {
     @IBOutlet weak var eachPersonPaysValueLabel: UILabel!
     
     
+    // MARK: Constructor(s)
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-         self.configureCardView(view: self)
-        
+        self.configureView(view: self)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.configureCardView(view: self)
+        self.configureView(view: self)
     }
     
-    private func configureCardView(view: UIView){
-        let nib = UINib(nibName: "BreakdownView", bundle: nil)
-        nib.instantiate(withOwner: self, options: nil)
+    // MARK: Method(s)
+    
+    private func configureView(view: UIView){
+        let _ = UINib(nibName: "BreakdownView", bundle: nil).instantiate(withOwner: self, options: nil)
         contentView.frame = bounds
         addSubview(contentView)
     }
     
-    func configureTitles(totalBillTitle: String, tipTitle: String,
-                         totalBillIncludingTipTitle: String, splitTitle: String,
+    func configureTitles(totalBillTitle: String,
+                         tipTitle: String,
+                         totalBillIncludingTipTitle: String,
+                         splitTitle: String,
                          eachPersonPaysTitle: String) {
         totalBillTitleLabel.text = totalBillTitle
         tipTitleLabel.text = tipTitle

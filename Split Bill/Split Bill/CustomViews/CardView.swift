@@ -12,21 +12,12 @@ class CardView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.configureCardView(view: self)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.configureCardView(view: self)
+        self.backgroundColor = .black
     }
     
-    private func configureCardView(view: UIView){
-        view.layer.cornerRadius = 4
-        view.layer.shadowOpacity = 1
-        view.layer.shadowRadius = 2
-        view.layer.shadowColor = UIColor.lightGray.cgColor
-        view.layer.shadowOffset = CGSize(width: 2, height: 2)
-        view.backgroundColor = UIColor.white
-    }
 
 }

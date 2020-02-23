@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="27X-9n-s8d">
-    <device id="retina3_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="27X-9n-s8d">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,103 +16,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="ZnU-ZE-cFf">
-                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fqD-30-ReD">
-                                <rect key="frame" x="30" y="34.5" width="260" height="431.5"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yWj-uq-Lfn" customClass="CardView" customModule="Split_Bill" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="431.5"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="hWF-Ng-k0N">
-                                                <rect key="frame" x="16" y="16" width="228" height="399.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Each person pays" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uh-op-ng3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="228" height="31.5"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R500000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGO-i0-CHz">
-                                                        <rect key="frame" x="0.0" y="62.5" width="228" height="36"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The total bill is R4000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcR-cY-LDF">
-                                                        <rect key="frame" x="0.0" y="106.5" width="228" height="0.0"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With a tip of 15% included" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6m-zQ-FSs">
-                                                        <rect key="frame" x="0.0" y="106.5" width="228" height="0.0"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbn-gU-lme">
-                                                        <rect key="frame" x="0.0" y="130" width="228" height="29"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <state key="normal" title="Details"/>
-                                                    </button>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1a-w2-qpN" customClass="BreakdownView" customModule="Split_Bill" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="190" width="228" height="128"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPA-jT-gsQ">
-                                                        <rect key="frame" x="0.0" y="326" width="228" height="0.0"/>
-                                                        <state key="normal" title="Hide details"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MhN-Jq-Ehd">
-                                                        <rect key="frame" x="0.0" y="349.5" width="228" height="50"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="ylB-nj-fls"/>
-                                                        </constraints>
-                                                        <state key="normal">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="doneButtonTapped:" destination="27X-9n-s8d" eventType="touchUpInside" id="chs-T6-vnq"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="hWF-Ng-k0N" firstAttribute="leading" secondItem="yWj-uq-Lfn" secondAttribute="leading" constant="16" id="6hr-gG-J5d"/>
-                                            <constraint firstAttribute="bottom" secondItem="hWF-Ng-k0N" secondAttribute="bottom" constant="16" id="TGb-Ba-HFs"/>
-                                            <constraint firstItem="hWF-Ng-k0N" firstAttribute="top" secondItem="yWj-uq-Lfn" secondAttribute="top" constant="16" id="hgI-b2-das"/>
-                                            <constraint firstAttribute="trailing" secondItem="hWF-Ng-k0N" secondAttribute="trailing" constant="16" id="thd-UD-OUw"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Each person pays" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uh-op-ng3">
+                                <rect key="frame" x="16" y="21" width="288" height="33.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R500000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGO-i0-CHz">
+                                <rect key="frame" x="16" y="70.5" width="288" height="58.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The total bill is R4000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcR-cY-LDF">
+                                <rect key="frame" x="16" y="145" width="288" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With a tip of 15% included" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6m-zQ-FSs">
+                                <rect key="frame" x="16" y="179" width="288" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q1a-w2-qpN" customClass="BreakdownView" customModule="Split_Bill" customModuleProvider="target">
+                                <rect key="frame" x="16" y="175" width="288" height="128.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="QGD-wN-ySm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="5"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="5" id="WGk-ay-I1x"/>
+                                </constraints>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MhN-Jq-Ehd">
+                                <rect key="frame" x="16" y="414" width="288" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ylB-nj-fls"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="27X-9n-s8d" eventType="touchUpInside" id="chs-T6-vnq"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fqD-30-ReD" firstAttribute="centerY" secondItem="ToA-ts-M8C" secondAttribute="centerY" id="8AG-Hz-j4j"/>
-                            <constraint firstItem="ZnU-ZE-cFf" firstAttribute="leading" secondItem="viK-pe-tAC" secondAttribute="leading" id="GDr-jt-nmi"/>
-                            <constraint firstItem="fqD-30-ReD" firstAttribute="leading" secondItem="ToA-ts-M8C" secondAttribute="leading" constant="30" id="Qo3-tH-Prp"/>
-                            <constraint firstAttribute="trailing" secondItem="ZnU-ZE-cFf" secondAttribute="trailing" id="bkV-6w-qsP"/>
-                            <constraint firstItem="fqD-30-ReD" firstAttribute="centerX" secondItem="ToA-ts-M8C" secondAttribute="centerX" id="kEP-rY-grO"/>
-                            <constraint firstItem="ToA-ts-M8C" firstAttribute="trailing" secondItem="fqD-30-ReD" secondAttribute="trailing" constant="30" id="nlr-lX-tkk"/>
-                            <constraint firstAttribute="bottom" secondItem="ZnU-ZE-cFf" secondAttribute="bottom" id="vIb-sT-slQ"/>
-                            <constraint firstItem="ZnU-ZE-cFf" firstAttribute="top" secondItem="viK-pe-tAC" secondAttribute="top" constant="20" id="wgA-cx-Gcg"/>
+                            <constraint firstItem="ToA-ts-M8C" firstAttribute="trailing" secondItem="q1a-w2-qpN" secondAttribute="trailing" constant="16" id="291-dY-NGA"/>
+                            <constraint firstItem="ToA-ts-M8C" firstAttribute="trailing" secondItem="XGO-i0-CHz" secondAttribute="trailing" constant="16" id="2Pu-P9-aRY"/>
+                            <constraint firstItem="ToA-ts-M8C" firstAttribute="trailing" secondItem="2uh-op-ng3" secondAttribute="trailing" constant="16" id="40T-Gi-lyW"/>
+                            <constraint firstAttribute="trailing" secondItem="d6m-zQ-FSs" secondAttribute="trailing" constant="16" id="CX3-kz-cYT"/>
+                            <constraint firstItem="XGO-i0-CHz" firstAttribute="leading" secondItem="ToA-ts-M8C" secondAttribute="leading" constant="16" id="Gsk-lM-cBj"/>
+                            <constraint firstItem="2uh-op-ng3" firstAttribute="top" secondItem="QGD-wN-ySm" secondAttribute="bottom" constant="16" id="JSA-2k-yiz"/>
+                            <constraint firstItem="d6m-zQ-FSs" firstAttribute="leading" secondItem="viK-pe-tAC" secondAttribute="leading" constant="16" id="K2r-l7-5GB"/>
+                            <constraint firstItem="QGD-wN-ySm" firstAttribute="top" secondItem="ToA-ts-M8C" secondAttribute="top" id="QCC-j4-6SK"/>
+                            <constraint firstItem="d6m-zQ-FSs" firstAttribute="top" secondItem="UcR-cY-LDF" secondAttribute="bottom" constant="16" id="RZk-3S-IdE"/>
+                            <constraint firstItem="QGD-wN-ySm" firstAttribute="leading" secondItem="ToA-ts-M8C" secondAttribute="leading" id="S2H-zj-yoc"/>
+                            <constraint firstItem="QGD-wN-ySm" firstAttribute="trailing" secondItem="ToA-ts-M8C" secondAttribute="trailing" id="YDd-Uv-DBy"/>
+                            <constraint firstItem="ToA-ts-M8C" firstAttribute="bottom" secondItem="MhN-Jq-Ehd" secondAttribute="bottom" constant="16" id="ZR2-7V-rgD"/>
+                            <constraint firstItem="q1a-w2-qpN" firstAttribute="top" secondItem="UcR-cY-LDF" secondAttribute="bottom" constant="16" id="ba9-6j-070"/>
+                            <constraint firstItem="UcR-cY-LDF" firstAttribute="leading" secondItem="viK-pe-tAC" secondAttribute="leading" constant="16" id="bdI-Ud-BAd"/>
+                            <constraint firstAttribute="trailing" secondItem="UcR-cY-LDF" secondAttribute="trailing" constant="16" id="grT-ez-JTs"/>
+                            <constraint firstItem="XGO-i0-CHz" firstAttribute="top" secondItem="2uh-op-ng3" secondAttribute="bottom" constant="16" id="lHG-bA-fY5"/>
+                            <constraint firstItem="q1a-w2-qpN" firstAttribute="leading" secondItem="ToA-ts-M8C" secondAttribute="leading" constant="16" id="pjI-jp-9vV"/>
+                            <constraint firstItem="UcR-cY-LDF" firstAttribute="top" secondItem="XGO-i0-CHz" secondAttribute="bottom" constant="16" id="qZA-fb-yAc"/>
+                            <constraint firstItem="2uh-op-ng3" firstAttribute="leading" secondItem="ToA-ts-M8C" secondAttribute="leading" constant="16" id="tCg-ev-a0x"/>
+                            <constraint firstItem="MhN-Jq-Ehd" firstAttribute="leading" secondItem="ToA-ts-M8C" secondAttribute="leading" constant="16" id="vvh-X1-xrh"/>
+                            <constraint firstItem="ToA-ts-M8C" firstAttribute="trailing" secondItem="MhN-Jq-Ehd" secondAttribute="trailing" constant="16" id="wFj-6G-YQf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ToA-ts-M8C"/>
                     </view>
                     <connections>
                         <outlet property="amountSplitLabel" destination="XGO-i0-CHz" id="Qm1-3t-Hdq"/>
                         <outlet property="breakdownView" destination="q1a-w2-qpN" id="3mU-n8-Z53"/>
-                        <outlet property="detailsButton" destination="Dbn-gU-lme" id="SBa-Sx-cas"/>
                         <outlet property="doneButton" destination="MhN-Jq-Ehd" id="tMa-yM-GIT"/>
                         <outlet property="eachPersonPaysLabel" destination="2uh-op-ng3" id="xVz-rY-gGF"/>
-                        <outlet property="hideDetailsButton" destination="SPA-jT-gsQ" id="ghm-2K-fFA"/>
-                        <outlet property="summaryCardView" destination="yWj-uq-Lfn" id="Nya-F4-hcs"/>
                         <outlet property="tipLabel" destination="d6m-zQ-FSs" id="YyC-jT-0le"/>
                         <outlet property="totalBillLabel" destination="UcR-cY-LDF" id="DY3-KP-24X"/>
                     </connections>
@@ -124,7 +105,4 @@
             <point key="canvasLocation" x="78.75" y="153.75"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Background" width="400" height="300"/>
-    </resources>
 </document>

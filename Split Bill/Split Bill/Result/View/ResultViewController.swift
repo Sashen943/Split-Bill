@@ -7,21 +7,25 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ResultViewController: UIViewController {
-
+    
+    // MARK: Outlet(s)
+    
     @IBOutlet weak var eachPersonPaysLabel: UILabel!
     @IBOutlet weak var amountSplitLabel: UILabel!
     @IBOutlet weak var totalBillLabel: UILabel!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
-    @IBOutlet weak var summaryCardView: CardView!
-    @IBOutlet weak var detailsButton: UIButton!
-    @IBOutlet weak var hideDetailsButton: UIButton!
     @IBOutlet weak var breakdownView: BreakdownView!
+    
+    // MARK: Attribute(s)
     
     var bill: Bill?
     var viewModel: ResultViewModel?
+    
+    // MARK: lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,25 +33,33 @@ class ResultViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        hideLeftNavigationItem()
-        setUpViewModel()
+        self.hideLeftNavigationItem()
+        self.setUpViewModel()
     }
+    
+    // MARK: Action(s)
+    
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        self.viewModel?.saveBill()
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     private func setUpViewModel() {
         if let bill = self.bill {
             viewModel = ResultViewModel(bill: bill, view: self)
             viewModel?.configureUI()
         }
     }
-
-    @IBAction func doneButtonTapped(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
-    }
+    
+    // MARK: Method(s)
     
     private func hideLeftNavigationItem() {
         self.navigationItem.leftBarButtonItem = nil
     }
-
+    
 }
+
+// MARK: ResultView Extension
 
 extension ResultViewController: ResultView {
     
@@ -74,16 +86,6 @@ extension ResultViewController: ResultView {
         doneButton.setTitle(buttonTitle, for: .normal)
     }
     
-    func configureDetailsButton(buttonTitle: String, action: Selector, target: Any) {
-        detailsButton.titleLabel?.text = buttonTitle
-        detailsButton.addTarget(target, action: action, for: .touchUpInside)
-    }
-    
-    func configureHideDetailsButton(buttonTitle: String, action: Selector, target: Any) {
-        hideDetailsButton.titleLabel?.text = buttonTitle
-        hideDetailsButton.addTarget(target, action: action, for: .touchUpInside)
-    }
-    
     func configureBreakdownViewTitles(totalBillTitle: String, tipTitle: String, totalBillIncludingTipTitle: String, splitTitle: String, eachPersonPaysTitle: String) {
         breakdownView.configureTitles(totalBillTitle: totalBillTitle,
                                       tipTitle: tipTitle,
@@ -100,16 +102,4 @@ extension ResultViewController: ResultView {
                                       eachPersonPaysValue: eachPersonPaysValue)
     }
     
-    func showDetails() {
-        breakdownView.isHidden = false
-        detailsButton.isHidden = true
-        hideDetailsButton.isHidden = false
-    }
-    
-    func hideDetails() {
-        breakdownView.isHidden = true
-        hideDetailsButton.isHidden = true
-        detailsButton.isHidden = false
-    }
-
 }

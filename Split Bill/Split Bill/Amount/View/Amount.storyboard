@@ -127,15 +127,15 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ghA-3X-K8u">
-                                        <rect key="frame" x="162.5" y="286.5" width="50" height="50"/>
+                                        <rect key="frame" x="152.5" y="276.5" width="70" height="70"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="5ba-CS-xxa"/>
-                                            <constraint firstAttribute="height" constant="50" id="WJC-98-NHX"/>
+                                            <constraint firstAttribute="width" constant="70" id="5ba-CS-xxa"/>
+                                            <constraint firstAttribute="height" constant="70" id="WJC-98-NHX"/>
                                         </constraints>
                                         <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching for location... " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztx-BX-lDj">
-                                        <rect key="frame" x="95" y="250" width="185.5" height="20.5"/>
+                                        <rect key="frame" x="95" y="240" width="185.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -177,8 +177,8 @@
                         <outlet property="loadingIndicationView" destination="7qJ-A5-U54" id="NiQ-QA-iCi"/>
                         <outlet property="locationLabel" destination="0kR-WF-Btn" id="R2H-Uq-luc"/>
                         <outlet property="nextButton" destination="cvX-FR-VZ0" id="NOm-7z-5vI"/>
-                        <segue destination="4U0-5Z-PW1" kind="show" identifier="people" id="DtL-yT-rEY"/>
-                        <segue destination="pVj-uW-uAf" kind="show" identifier="history" id="lzH-ey-c3B"/>
+                        <segue destination="4U0-5Z-PW1" kind="show" identifier="people" animates="NO" id="DtL-yT-rEY"/>
+                        <segue destination="pVj-uW-uAf" kind="show" identifier="history" animates="NO" id="lzH-ey-c3B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8es-q8-SPQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

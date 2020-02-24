@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Split Bill' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Split Bill
+  pod 'RealmSwift'
+  pod 'Swinject'
+
+  target 'Split BillTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Split BillUITests' do
+    # Pods for testing
+  end
+
+end

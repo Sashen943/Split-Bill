@@ -3,7 +3,9 @@ Split bill is a simple iOS application that allows a user to divide a bill among
 
 <h5>Instructions:<h5>
 
-Its simple just build and run.
+-> Clone
+-> Run pod install
+-> Build project
 
 <h5>Screenshots:<h5>
   
